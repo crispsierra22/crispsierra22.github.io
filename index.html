@@ -1,0 +1,961 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>挠脚心tk官网-轻互动玩法与安全体验指南</title>
+<meta name="description" content="挠脚心tk官网是一个聚焦脚底敏感互动玩法的中文主题站。这里整理轻触、羽毛、指腹划线等挠脚心技巧，收录tk体验者的实测记录、安全边界清单与偏好对照表，帮助新手判断力度、部位与节奏。">
+<meta name="keywords" content="挠脚心tk官网">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232e4a3f'/%3E%3Cpath d='M20 40c0-12 6-20 14-20s12 7 12 17c0 5-3 9-7 9-3 0-4-2-4-5 0-4-2-7-5-7s-5 3-5 7c0 3-1 5-3 5z' fill='%23f6e7c8'/%3E%3Ccircle cx='23' cy='20' r='3' fill='%23e0a45e'/%3E%3Ccircle cx='31' cy='16' r='2' fill='%23e0a45e'/%3E%3C/svg%3E">
+<style>
+:root{
+  --bg:#f7f4ec;
+  --bg-soft:#fffdf7;
+  --ink:#22302b;
+  --ink-2:#4a5a53;
+  --ink-3:#77857e;
+  --brand:#2e4a3f;
+  --brand-2:#3f6a58;
+  --accent:#d98a4a;
+  --accent-soft:#f6e7c8;
+  --line:#dcd6c7;
+  --line-2:#e9e3d5;
+  --danger:#a8503c;
+  --radius-s:6px;
+  --radius-m:12px;
+  --radius-l:20px;
+  --shadow-s:0 1px 2px rgba(34,48,43,.06);
+  --shadow-m:0 6px 20px rgba(34,48,43,.08);
+  --gap:20px;
+  --sticky-h:96px;
+  --font: "PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,sans-serif;
+  --mono: ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-h) + 12px)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:var(--brand-2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{margin:0;line-height:1.35;font-weight:700}
+p{margin:0 0 12px}
+ul,ol{margin:0 0 12px;padding-left:22px}
+li{margin-bottom:6px}
+button{font-family:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* ===== 吸顶区 ===== */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.announce{
+  background:var(--brand);color:#eef3ee;font-size:13px;letter-spacing:.2px;
+  display:flex;align-items:center;gap:10px;padding:6px 16px;flex-wrap:wrap;
+}
+.announce .tag{background:var(--accent);color:#2b1c0e;font-weight:700;border-radius:4px;padding:1px 7px;font-size:12px}
+.announce strong{color:#fff}
+.header{
+  background:rgba(255,253,247,.96);
+  backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+  box-shadow:var(--shadow-s);
+}
+.header-inner{
+  max-width:1180px;margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:18px;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.brand svg{width:40px;height:40px;flex:0 0 auto}
+.brand-text{font-size:20px;font-weight:800;color:var(--brand);letter-spacing:.3px}
+.brand-sub{display:block;font-size:11px;color:var(--ink-3);font-weight:400;letter-spacing:.5px}
+.nav{display:flex;gap:4px;flex-wrap:wrap;flex:1 1 320px}
+.nav a{
+  padding:6px 10px;border-radius:8px;color:var(--ink-2);font-size:14px;font-weight:500;
+  transition:background .18s,color .18s;white-space:nowrap;text-decoration:none;
+}
+.nav a:hover{background:var(--accent-soft);color:var(--brand);text-decoration:none}
+.nav a.active{background:var(--brand);color:#fff}
+.search-wrap{position:relative;flex:0 0 210px;max-width:100%}
+.search-wrap input{
+  width:100%;padding:8px 12px 8px 32px;border:1px solid var(--line);border-radius:999px;
+  background:var(--bg);font-size:14px;color:var(--ink);
+}
+.search-wrap input:focus{border-color:var(--brand-2);background:#fff}
+.search-icon{position:absolute;left:10px;top:50%;transform:translateY(-50%);width:15px;height:15px;opacity:.55}
+.search-msg{
+  position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1px solid var(--line);
+  border-radius:10px;box-shadow:var(--shadow-m);font-size:13px;padding:8px 12px;display:none;z-index:5;
+}
+.search-msg.show{display:block}
+.menu-btn{
+  display:none;align-items:center;gap:6px;border:1px solid var(--line);background:var(--bg-soft);
+  border-radius:10px;padding:8px 12px;font-size:14px;color:var(--brand);cursor:pointer;
+}
+.menu-btn svg{width:16px;height:16px}
+
+/* ===== 布局 ===== */
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:32px;align-items:start;margin-top:28px}
+main{min-width:0}
+.section{margin-bottom:46px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:16px;flex-wrap:wrap}
+.section-head h2{font-size:23px;color:var(--brand);letter-spacing:.2px;position:relative;padding-left:14px}
+.section-head h2::before{content:"";position:absolute;left:0;top:6px;bottom:6px;width:5px;border-radius:3px;background:var(--accent)}
+.section-note{font-size:13px;color:var(--ink-3)}
+.kicker{font-size:12px;letter-spacing:2px;color:var(--accent);font-weight:700;text-transform:uppercase;margin-bottom:6px}
+
+/* ===== 首屏 ===== */
+.hero{
+  position:relative;overflow:hidden;border-radius:var(--radius-l);
+  background:linear-gradient(150deg,#2e4a3f 0%,#38594b 45%,#254037 100%);
+  color:#f3efe2;padding:40px 36px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;
+  box-shadow:var(--shadow-m);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px 260px at 88% -10%,rgba(217,138,74,.28),transparent 70%);
+}
+.hero-text{position:relative;z-index:2}
+.hero .kicker{color:var(--accent-soft)}
+.hero h1{font-size:38px;letter-spacing:.5px;margin-bottom:14px;color:#fff}
+.hero p.lead{font-size:15px;color:#dfe7df;max-width:46ch;margin-bottom:18px}
+.hero-meta{display:flex;gap:22px;flex-wrap:wrap;margin-bottom:22px}
+.hero-meta div{font-size:12px;color:#c9d5cc;line-height:1.4}
+.hero-meta strong{display:block;font-size:22px;color:var(--accent-soft);font-weight:800;letter-spacing:.5px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;
+  font-size:14px;font-weight:600;border:1px solid transparent;cursor:pointer;transition:transform .18s,box-shadow .18s,background .18s;
+}
+.btn:hover{text-decoration:none;transform:translateY(-2px)}
+.btn-primary{background:var(--accent);color:#2b1c0e;box-shadow:0 6px 18px rgba(217,138,74,.35)}
+.btn-ghost{border-color:rgba(255,255,255,.4);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.1)}
+.hero-art{position:relative;z-index:2;display:flex;justify-content:center}
+.hero-art svg{width:100%;max-width:300px;height:auto;filter:drop-shadow(0 10px 24px rgba(0,0,0,.25))}
+
+/* ===== 通用卡片 ===== */
+.card{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:18px;box-shadow:var(--shadow-s);
+}
+.card h3{font-size:16px;margin-bottom:8px;color:var(--brand)}
+.card p{font-size:14px;color:var(--ink-2);margin-bottom:0}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+
+/* 分类索引 */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  display:inline-flex;align-items:center;gap:6px;padding:7px 14px;border-radius:999px;
+  background:var(--bg-soft);border:1px solid var(--line);font-size:13.5px;color:var(--ink-2);
+  transition:background .18s,color .18s,border-color .18s;text-decoration:none;
+}
+.chip:hover{background:var(--accent-soft);border-color:var(--accent);color:var(--brand);text-decoration:none}
+.chip b{color:var(--brand);font-weight:700}
+
+/* 精选卡片带图 */
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.feature{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;
+  display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s;
+}
+.feature:hover{transform:translateY(-3px);box-shadow:var(--shadow-m)}
+.feature img{width:100%;height:150px;object-fit:cover;background:var(--line-2)}
+.feature-body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
+.feature-body h3{font-size:15.5px;color:var(--ink);line-height:1.45}
+.feature-body p{font-size:13.5px;color:var(--ink-2);margin:0}
+.feature-body .meta{margin-top:auto;font-size:12px;color:var(--ink-3);display:flex;gap:10px;flex-wrap:wrap}
+.tagline{display:inline-block;background:var(--accent-soft);color:#7a4718;font-size:11.5px;font-weight:700;border-radius:5px;padding:1px 7px}
+
+/* 紧凑列表 */
+.list-tight{list-style:none;padding:0;margin:0;border-top:1px solid var(--line-2)}
+.list-tight li{
+  display:grid;grid-template-columns:78px 1fr auto;gap:12px;align-items:baseline;
+  padding:11px 2px;border-bottom:1px solid var(--line-2);margin:0;
+}
+.list-tight .date{font-family:var(--mono);font-size:12px;color:var(--ink-3);letter-spacing:.5px}
+.list-tight .t{font-size:14.5px;color:var(--ink)}
+.list-tight .t a{color:var(--ink)}
+.list-tight .t a:hover{color:var(--brand)}
+.list-tight .s{font-size:12px;color:var(--ink-3);white-space:nowrap}
+
+/* 深度解析 分栏正文 */
+.article{
+  background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-m);
+  padding:26px 28px;
+}
+.article h2{font-size:24px;color:var(--brand);margin-bottom:6px}
+.article .art-meta{font-size:12.5px;color:var(--ink-3);margin-bottom:18px;font-family:var(--mono);letter-spacing:.4px}
+.article h3{font-size:17.5px;margin:22px 0 8px;color:var(--brand);border-left:4px solid var(--accent);padding-left:10px}
+.article p{font-size:15px;color:var(--ink-2)}
+.article .claim{
+  background:#fdf6ea;border:1px dashed var(--accent);border-left:5px solid var(--accent);
+  border-radius:var(--radius-s);padding:14px 16px;margin:16px 0;font-size:14.5px;color:#5a3f28;
+}
+.article .claim b{color:#7a4718}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.quote{
+  border-left:4px solid var(--brand-2);background:var(--bg);padding:12px 16px;border-radius:0 var(--radius-s) var(--radius-s) 0;
+  font-size:14.5px;color:var(--ink-2);margin:14px 0;
+}
+.quote cite{display:block;margin-top:6px;font-size:12.5px;color:var(--ink-3);font-style:normal}
+
+/* 步骤 */
+.steps{list-style:none;counter-reset:s;padding:0;display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.steps li{
+  counter-increment:s;position:relative;background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:var(--radius-m);padding:14px 16px 14px 52px;margin:0;font-size:14px;color:var(--ink-2);
+}
+.steps li::before{
+  content:counter(s);position:absolute;left:14px;top:13px;width:26px;height:26px;border-radius:50%;
+  background:var(--brand);color:#fff;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;
+}
+.steps li b{display:block;color:var(--ink);font-size:14.5px;margin-bottom:2px}
+
+/* 对照面板 */
+.compare{display:grid;grid-template-columns:1fr 1fr;border:1px solid var(--line);border-radius:var(--radius-m);overflow:hidden;background:var(--bg-soft)}
+.compare>div{padding:18px}
+.compare .left{border-right:1px solid var(--line);background:#fbf8f0}
+.compare h3{font-size:15.5px;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+.dot.g{background:var(--brand-2)}
+.dot.r{background:var(--danger)}
+.compare ul{font-size:13.8px;color:var(--ink-2);margin:0;padding-left:20px}
+.compare li{margin-bottom:7px}
+
+/* FAQ */
+details{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-m);margin-bottom:10px;overflow:hidden}
+summary{
+  cursor:pointer;padding:13px 44px 13px 16px;font-weight:600;font-size:14.5px;color:var(--brand);
+  list-style:none;position:relative;
+}
+summary::-webkit-details-marker{display:none}
+summary::after{
+  content:"+";position:absolute;right:16px;top:50%;transform:translateY(-50%);
+  font-size:20px;font-weight:400;color:var(--accent);transition:transform .2s;
+}
+details[open] summary::after{content:"–"}
+details .faq-body{padding:0 16px 14px;font-size:14px;color:var(--ink-2);border-top:1px solid var(--line-2);padding-top:12px}
+
+/* 评论 */
+.comments{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.comment{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-m);padding:14px 16px}
+.comment .who{display:flex;align-items:center;gap:8px;margin-bottom:6px}
+.avatar{width:28px;height:28px;border-radius:50%;background:var(--accent-soft);color:#7a4718;font-weight:700;font-size:12.5px;display:flex;align-items:center;justify-content:center;flex:0 0 auto}
+.comment .name{font-size:13.5px;font-weight:600;color:var(--ink)}
+.comment .time{font-size:11.5px;color:var(--ink-3);margin-left:auto;font-family:var(--mono)}
+.comment p{font-size:13.8px;color:var(--ink-2);margin:0}
+.stars{color:var(--accent);font-size:12px;letter-spacing:1px}
+
+/* 时间线 / 补充 */
+.timeline{list-style:none;padding:0;margin:0;position:relative}
+.timeline::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:var(--line)}
+.timeline li{position:relative;padding:0 0 16px 30px;margin:0;font-size:14px;color:var(--ink-2)}
+.timeline li::before{content:"";position:absolute;left:3px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--bg-soft);border:3px solid var(--brand-2)}
+.timeline time{display:block;font-family:var(--mono);font-size:12px;color:var(--accent);letter-spacing:.5px;margin-bottom:2px}
+.timeline b{color:var(--ink)}
+
+/* 推荐标签 */
+.tag-cloud{display:flex;flex-wrap:wrap;gap:9px}
+.tag-cloud a{
+  font-size:13px;color:var(--ink-2);background:var(--bg-soft);border:1px solid var(--line);
+  border-radius:var(--radius-s);padding:6px 12px;transition:.18s;text-decoration:none;
+}
+.tag-cloud a:hover{background:var(--brand);color:#fff;border-color:var(--brand);text-decoration:none}
+
+/* 侧栏 */
+.side{position:sticky;top:calc(var(--sticky-h) + 16px);display:flex;flex-direction:column;gap:20px}
+.side-box{background:var(--bg-soft);border:1px solid var(--line);border-radius:var(--radius-m);padding:16px 18px}
+.side-box h3{font-size:15px;color:var(--brand);margin-bottom:10px;display:flex;align-items:center;gap:7px}
+.side-nav{list-style:none;padding:0;margin:0}
+.side-nav a{display:block;padding:7px 10px;border-radius:8px;font-size:13.5px;color:var(--ink-2);border-left:3px solid transparent;transition:.18s;text-decoration:none}
+.side-nav a:hover{background:var(--bg);color:var(--brand);text-decoration:none}
+.side-nav a.active{background:var(--accent-soft);border-left-color:var(--accent);color:var(--brand);font-weight:600}
+.rank{list-style:none;padding:0;margin:0;counter-reset:r}
+.rank li{counter-increment:r;display:flex;gap:10px;align-items:baseline;padding:8px 0;border-bottom:1px dashed var(--line);font-size:13.5px;margin:0}
+.rank li:last-child{border-bottom:0}
+.rank li::before{content:counter(r);font-family:var(--mono);font-size:12px;color:#fff;background:var(--ink-3);width:18px;height:18px;border-radius:4px;display:flex;align-items:center;justify-content:center;flex:0 0 auto;transform:translateY(2px)}
+.rank li:nth-child(-n+3)::before{background:var(--accent)}
+.rank a{color:var(--ink-2)}
+.rank a:hover{color:var(--brand)}
+
+/* 页脚 */
+.footer{background:var(--brand);color:#c9d5cc;margin-top:20px;padding:36px 0 22px}
+.footer-inner{max-width:1180px;margin:0 auto;padding:0 20px}
+.footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:26px}
+.footer h4{color:#fff;font-size:14px;margin-bottom:10px;letter-spacing:.5px}
+.footer p{font-size:13px;line-height:1.7;color:#b7c6bd;margin:0 0 10px}
+.footer ul{list-style:none;padding:0;margin:0}
+.footer li{margin-bottom:7px;font-size:13px}
+.footer a{color:#c9d5cc;text-decoration:none}
+.footer a:hover{color:#fff;text-decoration:underline}
+.footer .fbrand{display:flex;align-items:center;gap:9px;margin-bottom:10px}
+.footer .fbrand svg{width:34px;height:34px}
+.footer .fbrand span{color:#fff;font-size:18px;font-weight:800;letter-spacing:.3px}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.14);margin-top:24px;padding-top:14px;font-size:12.5px;color:#9fb1a7;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+
+/* 回顶部 */
+#toTop{
+  position:fixed;right:18px;bottom:22px;z-index:70;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:none;box-shadow:var(--shadow-m);cursor:pointer;
+  display:none;align-items:center;justify-content:center;transition:transform .2s,opacity .2s;
+}
+#toTop:hover{transform:translateY(-3px)}
+#toTop.show{display:flex}
+
+/* ===== 响应式 ===== */
+@media (max-width:1024px){
+  .layout{grid-template-columns:1fr}
+  .side{position:static;display:grid;grid-template-columns:1fr 1fr;order:2}
+  .hero{grid-template-columns:1fr;padding:32px 26px}
+  .hero h1{font-size:32px}
+  .hero-art{display:none}
+  .grid-3{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:760px){
+  :root{--sticky-h:104px}
+  .header-inner{padding:10px 14px;gap:10px}
+  .brand-text{font-size:18px}
+  .search-wrap{flex:1 1 140px;order:3}
+  .menu-btn{display:inline-flex;order:4}
+  .nav{
+    display:none;flex-direction:column;flex-basis:100%;order:5;gap:2px;
+    border-top:1px solid var(--line);padding-top:8px;margin-top:4px;
+  }
+  .nav.open{display:flex}
+  .nav a{font-size:14px;padding:9px 10px}
+  .feature-grid,.grid-2,.grid-3,.comments,.steps,.split,.compare{grid-template-columns:1fr}
+  .compare .left{border-right:none;border-bottom:1px solid var(--line)}
+  .section-head h2{font-size:20px}
+  .article{padding:20px 18px}
+  .article h2{font-size:21px}
+  .hero h1{font-size:27px}
+  .hero{padding:26px 18px;border-radius:var(--radius-m)}
+  .hero-meta{gap:16px}
+  .hero-meta strong{font-size:19px}
+  .list-tight li{grid-template-columns:1fr auto}
+  .list-tight .date{grid-column:1/-1;font-size:11.5px}
+  .side{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  #toTop{right:12px;bottom:14px;width:40px;height:40px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+  .btn:hover,.feature:hover,#toTop:hover{transform:none}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <div class="announce">
+    <span class="tag">更新</span>
+    <span><strong>挠脚心tk官网</strong> · 11月7日 上线「脚底敏感分区与力度对照表 v2」，新增 12 条实测条目，并修订羽毛类工具的清洁说明。</span>
+  </div>
+  <header class="header">
+    <div class="header-inner">
+      <a class="brand" href="/#hero" aria-label="返回顶部">
+        <svg viewBox="0 0 64 64" aria-hidden="true">
+          <rect width="64" height="64" rx="14" fill="#2e4a3f"/>
+          <path d="M20 42c0-13 6-21 14-21s12 7 12 18c0 5-3 9-7 9-3 0-4-2-4-5 0-4-2-7-5-7s-5 3-5 7c0 3-1 5-3 5z" fill="#f6e7c8"/>
+          <circle cx="23" cy="21" r="3" fill="#e0a45e"/>
+          <circle cx="31" cy="17" r="2" fill="#e0a45e"/>
+          <path d="M14 48h36" stroke="#e0a45e" stroke-width="2" stroke-linecap="round" opacity=".7"/>
+        </svg>
+        <span class="brand-text">挠脚心tk官网<span class="brand-sub">轻触 · 敏感 · 节奏</span></span>
+      </a>
+      <nav class="nav" id="mainNav" aria-label="主题导航">
+        <a href="/#overview">领域概览</a>
+        <a href="/#picks">精选推荐</a>
+        <a href="/#latest">最新更新</a>
+        <a href="/#channels">分类入口</a>
+        <a href="/#deep">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#voice">体验者评论</a>
+        <a href="/#news">相关资讯</a>
+      </nav>
+      <div class="search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg>
+        <input id="searchInput" type="search" placeholder="搜索玩法、工具、部位…" aria-label="站内搜索">
+        <div class="search-msg" id="searchMsg" role="status" aria-live="polite"></div>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="mainNav">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        菜单
+      </button>
+    </div>
+  </header>
+</div>
+
+<div class="wrap">
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <div class="kicker">脚底敏感互动 · 实测与规则</div>
+      <h1>挠脚心tk官网</h1>
+      <p class="lead">把脚底划成六块区域，记录每种工具从轻触到明显反应所需的秒数。这里存放的是 2026 年 10 月至 11 月的实测记录、安全边界与偏好对照，供第一次尝试的人先看节奏再动手。</p>
+      <div class="hero-meta">
+        <div><strong>6</strong>脚底敏感分区</div>
+        <div><strong>34</strong>条工具实测记录</div>
+        <div><strong>11月7日</strong>力度表修订</div>
+      </div>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/#deep">先读深度解析</a>
+        <a class="btn btn-ghost" href="/#guide">看体验步骤</a>
+      </div>
+    </div>
+    <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 300 260" role="img">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#f6e7c8"/><stop offset="1" stop-color="#e0a45e"/>
+          </linearGradient>
+        </defs>
+        <ellipse cx="150" cy="232" rx="118" ry="16" fill="#1d332b" opacity=".45"/>
+        <path d="M96 210c-16-18-24-46-22-74 2-34 20-58 48-66 30-9 58 4 72 30 12 24 10 56-4 82-10 18-24 30-40 34z" fill="url(#lg)"/>
+        <path d="M118 96c10-10 26-14 40-8M124 128c12-8 28-10 40-4M130 160c12-6 24-6 34-2" stroke="#b9773a" stroke-width="3.5" stroke-linecap="round" fill="none" opacity=".75"/>
+        <circle cx="103" cy="78" r="13" fill="#f3d9ad"/>
+        <circle cx="138" cy="58" r="10" fill="#f3d9ad"/>
+        <circle cx="172" cy="62" r="9" fill="#f3d9ad"/>
+        <circle cx="196" cy="80" r="8" fill="#f3d9ad"/>
+        <path d="M212 120c14 4 22 14 20 26" stroke="#e0a45e" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <path d="M46 120c14-6 26-2 32 8" stroke="#e0a45e" stroke-width="3" stroke-linecap="round" fill="none"/>
+        <g opacity=".9">
+          <path d="M40 60l22 8M36 84l26 2M44 108l22-6" stroke="#f6e7c8" stroke-width="3" stroke-linecap="round"/>
+        </g>
+      </svg>
+    </div>
+  </section>
+
+  <div class="layout">
+    <main>
+
+      <!-- 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-head">
+          <h2>领域概览：脚底为什么会先笑</h2>
+          <span class="section-note">概念 · 类型 · 判断方法</span>
+        </div>
+        <p>脚底皮肤每平方厘米的触觉小体密度高于手背，足弓与脚趾缝尤其集中。轻触、羽毛、指腹划线、软刷这四类刺激在 2026 年 10 月的 34 条记录里，被反复提到“先缩再笑”的顺序。挠脚心tk玩法把刺激划成轻度、中度、明显三个阶段，判断标准不是笑得多响，而是脚部是否出现主动回缩与呼吸节奏变化。</p>
+        <div class="grid-3" style="margin-top:16px">
+          <div class="card">
+            <h3>轻触类</h3>
+            <p>羽毛尖、棉签头、发丝扫过脚心。记录显示 4 秒内出现脚趾蜷曲的比例最高，适合第一次尝试。</p>
+          </div>
+          <div class="card">
+            <h3>摩擦类</h3>
+            <p>指腹顺足弓来回、软毛刷打圈。刺激时间更长，10 月 22 日后新增了刷面软硬分级。</p>
+          </div>
+          <div class="card">
+            <h3>固定类</h3>
+            <p>脚踝束缚后定点刺激。规则要求事前逐项确认松紧，记录中约三成体验者选择跳过。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 精选推荐 -->
+      <section class="section" id="picks">
+        <div class="section-head">
+          <h2>精选内容推荐</h2>
+          <span class="section-note">编辑挑出 · 每条附实测依据</span>
+        </div>
+        <div class="feature-grid">
+          <article class="feature">
+            <img src="https://picsum.photos/seed/tkfoot01/560/320" width="560" height="320" loading="lazy" alt="脚底足弓区域与羽毛尖轻触示意图">
+            <div class="feature-body">
+              <span class="tagline">实测</span>
+              <h3>足弓区羽毛尖轻触：4 秒阈值记录</h3>
+              <p>10 月 28 日，三次间隔 90 秒的轻触，第一次 4 秒出现回缩，第二次缩短到 2 秒，第三次出现笑声。</p>
+              <div class="meta"><span>2026-10-28</span><span>记录人：阿栎</span></div>
+            </div>
+          </article>
+          <article class="feature">
+            <img src="https://picsum.photos/seed/tkbrush02/560/320" width="560" height="320" loading="lazy" alt="软毛刷在脚掌前掌打圈的演示画面">
+            <div class="feature-body">
+              <span class="tagline">工具</span>
+              <h3>软毛刷软硬分级：三种刷面对照</h3>
+              <p>化妆刷、牙刷、鞋刷三类对比，化妆刷在脚趾缝最易触发反应，鞋刷被 7 人中的 6 人判定过强。</p>
+              <div class="meta"><span>2026-11-02</span><span>样本 7 人</span></div>
+            </div>
+          </article>
+          <article class="feature">
+            <img src="https://picsum.photos/seed/tktool03/560/320" width="560" height="320" loading="lazy" alt="棉签与发丝等轻触工具排列在木桌上">
+            <div class="feature-body">
+              <span class="tagline">入门</span>
+              <h3>第一次玩挠脚心tk：工具从棉签到发丝</h3>
+              <p>棉签头接触面大，容易控制；发丝需要悬空操作，掉落时会中断节奏。新手按 1 分钟一轮起步。</p>
+              <div class="meta"><span>2026-10-19</span><span>步骤 6 条</span></div>
+            </div>
+          </article>
+          <article class="feature">
+            <img src="https://picsum.photos/seed/tksafe04/560/320" width="560" height="320" loading="lazy" alt="脚踝固定带与安全确认清单摆放在一起">
+            <div class="feature-body">
+              <span class="tagline">安全</span>
+              <h3>脚踝束缚前的 5 项确认与停手词</h3>
+              <p>松紧以能塞进两根手指为准；停手词须在开始前说定，11 月 3 日记录中有 1 次因未约定而提前终止。</p>
+              <div class="meta"><span>2026-11-03</span><span>安全清单</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 最新更新 -->
+      <section class="section" id="latest">
+        <div class="section-head">
+          <h2>最新更新</h2>
+          <span class="section-note">按日期倒序，均在本周内</span>
+        </div>
+        <ul class="list-tight">
+          <li>
+            <span class="date">11-08</span>
+            <span class="t"><a href="/#deep">力度对照表 v2 补入脚趾缝数据</a></span>
+            <span class="s">表格</span>
+          </li>
+          <li>
+            <span class="date">11-07</span>
+            <span class="t"><a href="/#guide">体验指南新增“三分钟轮换法”</a></span>
+            <span class="s">步骤</span>
+          </li>
+          <li>
+            <span class="date">11-06</span>
+            <span class="t"><a href="/#faq">问答区补充“笑到岔气怎么办”</a></span>
+            <span class="s">问答</span>
+          </li>
+          <li>
+            <span class="date">11-04</span>
+            <span class="t"><a href="/#voice">体验者评论新增 4 条带记录的吐槽</a></span>
+            <span class="s">评论</span>
+          </li>
+          <li>
+            <span class="date">11-02</span>
+            <span class="t"><a href="/#picks">软毛刷软硬分级上线</a></span>
+            <span class="s">工具</span>
+          </li>
+          <li>
+            <span class="date">10-30</span>
+            <span class="t"><a href="/#news">整理 10 月共 34 条工具实测记录</a></span>
+            <span class="s">汇总</span>
+          </li>
+        </ul>
+      </section>
+
+      <!-- 分类入口 -->
+      <section class="section" id="channels">
+        <div class="section-head">
+          <h2>分类入口</h2>
+          <span class="section-note">按玩法与工具划分</span>
+        </div>
+        <div class="chips">
+          <a class="chip" href="/#deep">足弓轻触技巧 <b>8</b></a>
+          <a class="chip" href="/#picks">羽毛尖扫脚心 <b>6</b></a>
+          <a class="chip" href="/#picks">指腹划线节奏 <b>7</b></a>
+          <a class="chip" href="/#picks">软毛刷刷脚掌 <b>5</b></a>
+          <a class="chip" href="/#guide">脚趾缝刺激 <b>4</b></a>
+          <a class="chip" href="/#guide">脚踝固定安全 <b>6</b></a>
+          <a class="chip" href="/#faq">笑到岔气应对 <b>3</b></a>
+          <a class="chip" href="/#voice">第一次体验记录 <b>9</b></a>
+          <a class="chip" href="/#news">工具清洁与收纳 <b>5</b></a>
+          <a class="chip" href="/#deep">敏感度分区对照 <b>6</b></a>
+          <a class="chip" href="/#latest">本周更新速览 <b>6</b></a>
+        </div>
+      </section>
+
+      <!-- 深度解析 -->
+      <section class="section" id="deep">
+        <article class="article">
+          <h2>深度解析：脚底敏感度不是均匀分布的</h2>
+          <div class="art-meta">2026-11-08 · 依据 34 条实测记录与 6 次分区复测</div>
+
+          <p>把脚底当作一整块来挠，是最常见也最浪费时间的做法。10 月 12 日至 11 月 6 日的记录里，同一只脚在足弓、脚趾缝、前掌、脚跟四个位置的反应时间差可达到 3 倍以上。这条判断可以被反驳——样本只有 34 条，且集中在 7 名体验者——所以先给出可核对的结构。</p>
+
+          <h3>一、四区反应秒数的横向对比</h3>
+          <p>统一用同规格羽毛尖、同一操作者、每区间隔 90 秒。足弓平均 4.1 秒出现首次回缩；脚趾缝 2.3 秒；前掌 6.8 秒；脚跟 11.5 秒。11 月 3 日的复测里，脚趾缝仍有 2.1 秒，脚跟拉长到 13 秒。数据说明脚趾缝是启动点，脚跟更像收尾区。</p>
+          <div class="claim"><b>可被反驳的判断：</b>脚趾缝的敏感度优势在第二次接触后会迅速下降。10 月 22 日三条记录显示，第二次阈值只缩短 0.4 秒，而足弓缩短 1.6 秒。若换用软毛刷，脚趾缝的优势在第三轮就基本消失。</div>
+
+          <h3>二、10 月 28 日那次“提前笑”的规则差异</h3>
+          <p>同日两名体验者出现未到阈值先笑的情况。阿栎的记录写明“预热阶段已经在笑”，而另一条记录归因于“等待时间太长，紧张”。两条说法并不冲突，前者是刺激前的预期反应，后者是间隔过长后的心理放大。转述时容易合并成“脚底一碰就笑”，但这会掩盖预热时长这个变量。</p>
+          <div class="quote">“第二回还没碰到脚心，我就先笑了。后来把间隔从 90 秒缩到 45 秒，反而正常。”<cite>——体验者阿栎，10 月 28 日记录</cite></div>
+
+          <h3>三、力度对照表 v2 的三处修订</h3>
+          <p>11 月 7 日的 v2 版本把“轻度”上限从 2 秒单次接触下调到 1.5 秒，新增脚趾缝单独一档，并把软毛刷从“中度”移到“轻中度”。修订依据是 10 月 30 日汇总里 5 条“刷面过强”的反馈。旧版把牙刷与化妆刷并列，实际牙刷在 7 人中有 6 人判定偏强，这条差异此前没有单列。</p>
+
+          <div class="split">
+            <div>
+              <h3>四、支持“分区优先”的证据</h3>
+              <ul>
+                <li>6 次复测中，先刺激脚趾缝再转足弓的顺序，平均总时长缩短 27%。</li>
+                <li>10 月 19 日的入门记录里，先碰脚跟的两人均在 30 秒内要求暂停。</li>
+                <li>力度表 v2 将四区拆开标注，使用后误判率下降。</li>
+              </ul>
+            </div>
+            <div>
+              <h3>五、可能推翻它的情形</h3>
+              <ul>
+                <li>样本集中在 7 人，年龄与脚部护理习惯未分层。</li>
+                <li>羽毛尖规格不统一，长度差 3 毫米就影响接触面积。</li>
+                <li>11 月 5 日一条记录出现足弓比脚趾缝更快的反例。</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3>六、把判断拆成可核对的四步</h3>
+          <ol>
+            <li>记录工具：名称、接触面宽度、是否新开封。</li>
+            <li>记录顺序：先哪一区、间隔多少秒。</li>
+            <li>记录反应：回缩、蜷趾、笑声三者分开计。</li>
+            <li>记录终止原因：停手词、时间到、还是体验者主动喊停。</li>
+          </ol>
+          <p>按这四步走，一条记录就能被他人复现；缺任何一项，结论只能算推测。</p>
+        </article>
+      </section>
+
+      <!-- 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-head">
+          <h2>体验指南：三分钟轮换法</h2>
+          <span class="section-note">适合第一次尝试的人</span>
+        </div>
+        <ol class="steps">
+          <li><b>说定停手词</b>用一个与场景无关的词，比如“橘子”。11 月 3 日的记录里，未约定停手词的那次提前终止了。</li>
+          <li><b>露出脚底并放松</b>坐姿或躺姿均可，脚踝下垫软枕，避免悬空发力。先静置 30 秒。</li>
+          <li><b>从脚趾缝开始</b>羽毛尖轻扫 1.5 秒即停，间隔 45 秒，共三轮。记录首次回缩时间。</li>
+          <li><b>转到足弓</b>指腹顺足弓来回，力度以皮肤不起红为准，每轮 10 秒。</li>
+          <li><b>前掌与脚跟收尾</b>前掌用软毛刷打圈，脚跟只做轻触，时间减半。</li>
+          <li><b>结束后复盘</b>对照四区秒数，把反应最强的区域标出来，下次从那里开始。</li>
+        </ol>
+        <p style="margin-top:14px;font-size:14px;color:var(--ink-2)">三分钟轮换法的核心是“短接触、留间隔”。连续刺激超过 1 分钟，脚底会进入迟钝状态，记录也随之失真。</p>
+      </section>
+
+      <!-- FAQ -->
+      <section class="section" id="faq">
+        <div class="section-head">
+          <h2>常见问答</h2>
+          <span class="section-note">按提问频次排序</span>
+        </div>
+
+        <details>
+          <summary>脚趾缝为什么比足弓更容易有反应？</summary>
+          <div class="faq-body">脚趾缝的触觉小体密度高，且皮肤褶皱多，羽毛尖进入缝隙时接触面积小、压强集中。10 月 12 日至 11 月 6 日的记录里，脚趾缝平均 2.3 秒出现回缩，比足弓快 1.8 秒。不过这个优势在第二轮会缩小，间隔太短时甚至会反转。</div>
+        </details>
+
+        <details>
+          <summary>软毛刷和牙刷哪个更适合新手？</summary>
+          <div class="faq-body">软毛刷，具体指化妆刷类。7 人对照里，牙刷被 6 人判定偏强，刷毛硬度与接触面都更刺激。化妆刷在脚掌前掌打圈时反馈更平稳。若只有牙刷，可用刷背或隔一层薄棉布。</div>
+        </details>
+
+        <details>
+          <summary>笑到岔气应该怎么处理？</summary>
+          <div class="faq-body">立刻停止刺激，让体验者坐起、前倾，缓慢呼气。11 月 6 日补充的记录建议先离开躺姿再说话，躺姿下笑声容易继续。若 2 分钟内仍未缓解，改为热敷脚底并结束当次体验。</div>
+        </details>
+
+        <details>
+          <summary>脚踝束缚一定要用吗？</summary>
+          <div class="faq-body">不是必需项。34 条记录里约三成体验者跳过束缚，同样完成了分区记录。使用束缚时，松紧以能塞进两根手指为准，且必须在开始前说定停手词。11 月 3 日的一次提前终止，原因正是未约定停手词。</div>
+        </details>
+
+        <details>
+          <summary>同一只脚连续测两轮，数据还能用吗？</summary>
+          <div class="faq-body">第二轮数据要单独标注。脚底在连续刺激后会迟钝，10 月 22 日的三条记录里，第二轮阈值平均只缩短 0.4 秒，而首轮缩短 1.6 秒。若要做前后对比，两轮之间至少留 10 分钟。</div>
+        </details>
+
+        <details>
+          <summary>羽毛尖长度会影响结果吗？</summary>
+          <div class="faq-body">会。长度差 3 毫米，接触面积就不同，回缩时间随之变化。做记录时写明羽毛尖的大致长度与是否新开封，否则不同人的数据无法并排比较。</div>
+        </details>
+      </section>
+
+      <!-- 体验者评论 -->
+      <section class="section" id="voice">
+        <div class="section-head">
+          <h2>体验者评论</h2>
+          <span class="section-note">保留原话，含吐槽</span>
+        </div>
+        <div class="comments">
+          <div class="comment">
+            <div class="who"><span class="avatar">栎</span><span class="name">阿栎</span><span class="time">11-06</span></div>
+            <p><span class="stars">★★★★★</span> 脚趾缝那组数据我复核过，第二轮确实掉得快。但“预热阶段先笑”这条我觉得被放大了，那天我只是等太久。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">舟</span><span class="name">小舟</span><span class="time">11-04</span></div>
+            <p><span class="stars">★★★☆☆</span> 软毛刷分级挺有用，就是牙刷那栏写得太轻描淡写。我刷了 20 秒就受不了，跟“偏强”两个字对不上。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">七</span><span class="name">七月</span><span class="time">11-04</span></div>
+            <p><span class="stars">★★★★☆</span> 三分钟轮换法照着做了一遍，脚跟 13 秒才缩，比文中写的还慢。可能我脚底比较厚。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">岩</span><span class="name">岩井</span><span class="time">11-03</span></div>
+            <p><span class="stars">★★☆☆☆</span> 束缚那部分写得太简单。塞进两根手指这个标准，每个人手指粗细不一样，建议直接标厘米数。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">沐</span><span class="name">沐子</span><span class="time">11-02</span></div>
+            <p><span class="stars">★★★★☆</span> 力度表 v2 比 v1 好用，至少脚趾缝不用再借足弓的档位。就是表格还没放进页面，得自己翻。</p>
+          </div>
+          <div class="comment">
+            <div class="who"><span class="avatar">遥</span><span class="name">遥</span><span class="time">10-31</span></div>
+            <p><span class="stars">★★★☆☆</span> 停手词这条真的重要。上次没说好，对方笑着喊停，我以为在闹，差点没停。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-head">
+          <h2>相关资讯</h2>
+          <span class="section-note">工具与记录方法</span>
+        </div>
+        <div class="grid-2">
+          <div class="card">
+            <h3>10 月 34 条工具实测记录完成汇总</h3>
+            <p>10 月 30 日整理完毕，涵盖羽毛、棉签、指腹、软毛刷、牙刷五类。其中牙刷类 5 条被标记“过强”，建议新手跳过。</p>
+          </div>
+          <div class="card">
+            <h3>化妆刷清洁方法更新，避免刷毛变硬</h3>
+            <p>11 月 1 日补充：温水加中性洗剂，顺毛冲洗，阴干。刷毛变硬后接触面积增大，会误判为“中度刺激”。</p>
+          </div>
+          <div class="card">
+            <h3>脚底分区记录表改用四区版本</h3>
+            <p>11 月 5 日启用，四区分栏，每栏含首缩秒数、蜷趾、笑声三项。旧版把前掌与脚跟合并，导致数据失真。</p>
+          </div>
+          <div class="card">
+            <h3>间隔 90 秒与 45 秒的对照结果</h3>
+            <p>11 月 6 日复测，45 秒间隔下第二轮阈值下降更平缓，90 秒间隔容易出现“还没碰就先笑”的预期反应。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 补充：时间线 -->
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <h2>本月关键节点时间线</h2>
+          <span class="section-note">按事件发生日期</span>
+        </div>
+        <ul class="timeline">
+          <li><time>2026-10-12</time><b>四区记录法启用</b>，首次把足弓、脚趾缝、前掌、脚跟分开计时。</li>
+          <li><time>2026-10-22</time><b>连测轮次差异被发现</b>，第二轮阈值只缩短 0.4 秒，成为后续修订依据。</li>
+          <li><time>2026-10-30</time><b>34 条工具记录汇总完成</b>，牙刷类被单独标出。</li>
+          <li><time>2026-11-03</time><b>一次提前终止</b>，原因未约定停手词，写进安全清单。</li>
+          <li><time>2026-11-07</time><b>力度对照表 v2 上线</b>，脚趾缝单独成档。</li>
+        </ul>
+      </section>
+
+      <!-- 相关推荐 -->
+      <section class="section" id="related">
+        <div class="section-head">
+          <h2>相关推荐</h2>
+          <span class="section-note">按阅读路径排列</span>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#deep">脚底敏感度分区对照</a>
+          <a href="/#picks">羽毛尖扫脚心实测</a>
+          <a href="/#guide">三分钟轮换法步骤</a>
+          <a href="/#picks">软毛刷刷脚掌分级</a>
+          <a href="/#guide">脚踝束缚安全清单</a>
+          <a href="/#faq">笑到岔气应对方法</a>
+          <a href="/#news">化妆刷清洁与收纳</a>
+          <a href="/#voice">第一次体验记录合集</a>
+          <a href="/#deep">力度对照表 v2 修订</a>
+          <a href="/#latest">本周更新速览</a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 侧栏（DOM 在主内容之后） -->
+    <aside class="side" aria-label="侧栏导航与榜单">
+      <div class="side-box">
+        <h3>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          栏目导航
+        </h3>
+        <ul class="side-nav" id="sideNav">
+          <li><a href="/#overview">领域概览</a></li>
+          <li><a href="/#picks">精选内容推荐</a></li>
+          <li><a href="/#latest">最新更新</a></li>
+          <li><a href="/#channels">分类入口</a></li>
+          <li><a href="/#deep">深度解析</a></li>
+          <li><a href="/#guide">体验指南</a></li>
+          <li><a href="/#faq">常见问答</a></li>
+          <li><a href="/#voice">体验者评论</a></li>
+          <li><a href="/#news">相关资讯</a></li>
+          <li><a href="/#timeline">关键节点时间线</a></li>
+          <li><a href="/#related">相关推荐</a></li>
+        </ul>
+      </div>
+      <div class="side-box">
+        <h3>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3l2.5 5.5L20 10l-4 4 1 6-5-3-5 3 1-6-4-4 5.5-1.5z"/></svg>
+          本月敏感区榜单
+        </h3>
+        <ol class="rank">
+          <li><a href="/#deep">脚趾缝 · 平均 2.3 秒</a></li>
+          <li><a href="/#deep">足弓 · 平均 4.1 秒</a></li>
+          <li><a href="/#deep">前掌 · 平均 6.8 秒</a></li>
+          <li><a href="/#deep">脚跟 · 平均 11.5 秒</a></li>
+        </ol>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div>
+        <div class="fbrand">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#e0a45e"/>
+            <path d="M20 42c0-13 6-21 14-21s12 7 12 18c0 5-3 9-7 9-3 0-4-2-4-5 0-4-2-7-5-7s-5 3-5 7c0 3-1 5-3 5z" fill="#f6e7c8"/>
+            <circle cx="23" cy="21" r="3" fill="#7a4718"/>
+            <circle cx="31" cy="17" r="2" fill="#7a4718"/>
+          </svg>
+          <span>挠脚心tk官网</span>
+        </div>
+        <p>记录脚底四区的反应秒数、工具分级与安全边界，所有条目均可在对应板块核对。</p>
+      </div>
+      <div>
+        <h4>玩法</h4>
+        <ul>
+          <li><a href="/#deep">足弓轻触技巧</a></li>
+          <li><a href="/#picks">羽毛尖扫脚心</a></li>
+          <li><a href="/#picks">指腹划线节奏</a></li>
+          <li><a href="/#guide">脚趾缝刺激</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>工具与安全</h4>
+        <ul>
+          <li><a href="/#picks">软毛刷分级</a></li>
+          <li><a href="/#guide">脚踝束缚清单</a></li>
+          <li><a href="/#news">化妆刷清洁</a></li>
+          <li><a href="/#faq">笑到岔气应对</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>记录与反馈</h4>
+        <ul>
+          <li><a href="/#latest">本周更新速览</a></li>
+          <li><a href="/#voice">体验者评论</a></li>
+          <li><a href="/#timeline">关键节点时间线</a></li>
+          <li><a href="/#related">相关推荐标签</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>页脚更新于 2026-11-08，对应正文“力度对照表 v2 补入脚趾缝数据”与“体验指南新增三分钟轮换法”两项。</span>
+      <span>内容为示例数据，仅用于主题演示 · © 2026 挠脚心tk官网</span>
+    </div>
+  </div>
+</footer>
+
+<button id="toTop" aria-label="回到顶部">
+  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M6 14l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function(){
+  var menuBtn=document.getElementById('menuBtn');
+  var nav=document.getElementById('mainNav');
+  if(menuBtn&&nav){
+    menuBtn.addEventListener('click',function(){
+      var open=nav.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded',open?'true':'false');
+    });
+    nav.addEventListener('click',function(e){
+      if(e.target.tagName==='A'&&window.innerWidth<=760){
+        nav.classList.remove('open');
+        menuBtn.setAttribute('aria-expanded','false');
+      }
+    });
+  }
+
+  var toTop=document.getElementById('toTop');
+  window.addEventListener('scroll',function(){
+    if(window.scrollY>420){toTop.classList.add('show');}else{toTop.classList.remove('show');}
+  },{passive:true});
+  toTop.addEventListener('click',function(){
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+
+  // 搜索本地查找
+  var input=document.getElementById('searchInput');
+  var msg=document.getElementById('searchMsg');
+  function doSearch(){
+    var q=(input.value||'').trim();
+    if(!q){msg.classList.remove('show');msg.textContent='';return;}
+    var matches=[];
+    document.querySelectorAll('main h2, main h3, main summary, main .t a, .tag-cloud a, .rank a').forEach(function(el){
+      var txt=el.textContent.replace(/\s+/g,'');
+      if(txt.indexOf(q)>-1){matches.push(el);}
+    });
+    if(matches.length===0){
+      msg.textContent='没有找到与“'+q+'”相关的内容，可试试：脚趾缝、软毛刷、停手词、三分钟轮换。';
+      msg.classList.add('show');
+    }else{
+      msg.textContent='找到 '+matches.length+' 条相关内容，点击可跳转。';
+      msg.classList.add('show');
+      var first=matches[0];
+      var target=first.closest('section')||first;
+      if(matches.length===1&&target&&target.id){
+        msg.innerHTML='找到 1 条相关内容：<a href="/#'+target.id+'">'+first.textContent.trim().slice(0,24)+'</a>';
+      }
+    }
+  }
+  input.addEventListener('input',doSearch);
+  input.addEventListener('keydown',function(e){
+    if(e.key==='Enter'){
+      e.preventDefault();
+      var first=document.querySelector('main .t a, main h3, main summary');
+      doSearch();
+    }
+  });
+
+  // 侧栏滚动高亮
+  var links=Array.prototype.slice.call(document.querySelectorAll('#sideNav a'));
+  var targets=links.map(function(a){
+    var id=a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  }).filter(Boolean);
+  if('IntersectionObserver' in window&&targets.length){
+    var io=new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){
+          links.forEach(function(a){a.classList.remove('active');});
+          var idx=targets.indexOf(en.target);
+          if(idx>-1){links[idx].classList.add('active');}
+        }
+      });
+    },{rootMargin:'-120px 0px -60% 0px',threshold:0});
+    targets.forEach(function(t){io.observe(t);});
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"挠脚心tk官网",
+  "description":"聚焦脚底敏感互动玩法的中文主题站，整理轻触、羽毛、指腹划线等技巧、四区力度对照与安全边界清单。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"脚趾缝为什么比足弓更容易有反应？","acceptedAnswer":{"@type":"Answer","text":"脚趾缝的触觉小体密度高，皮肤褶皱多，羽毛尖进入缝隙时接触面积小、压强集中。10月12日至11月6日的记录里，脚趾缝平均2.3秒出现回缩，比足弓快1.8秒，但第二轮优势会缩小。"}},
+    {"@type":"Question","name":"软毛刷和牙刷哪个更适合新手？","acceptedAnswer":{"@type":"Answer","text":"软毛刷，具体指化妆刷类。7人对照里牙刷被6人判定偏强，刷毛硬度与接触面都更刺激；化妆刷在脚掌前掌打圈时反馈更平稳。"}},
+    {"@type":"Question","name":"笑到岔气应该怎么处理？","acceptedAnswer":{"@type":"Answer","text":"立刻停止刺激，让体验者坐起、前倾、缓慢呼气。11月6日补充的记录建议先离开躺姿再说话。若2分钟内仍未缓解，改为热敷脚底并结束当次体验。"}},
+    {"@type":"Question","name":"脚踝束缚一定要用吗？","acceptedAnswer":{"@type":"Answer","text":"不是必需项，34条记录里约三成体验者跳过束缚也能完成分区记录。使用束缚时松紧以能塞进两根手指为准，并须在开始前说定停手词。"}},
+    {"@type":"Question","name":"同一只脚连续测两轮数据还能用吗？","acceptedAnswer":{"@type":"Answer","text":"第二轮数据要单独标注。脚底连续刺激后会迟钝，10月22日三条记录里第二轮阈值平均只缩短0.4秒，首轮缩短1.6秒。要做前后对比，两轮之间至少留10分钟。"}},
+    {"@type":"Question","name":"羽毛尖长度会影响结果吗？","acceptedAnswer":{"@type":"Answer","text":"会。长度差3毫米接触面积就不同，回缩时间随之变化。做记录时须写明羽毛尖的大致长度与是否新开封，否则不同人的数据无法并排比较。"}}
+  ]
+}
+</script>
+</body>
+</html>
